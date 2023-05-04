@@ -1,8 +1,5 @@
-# <span style="color:darkgreen;font-size: 20pt">RoutingFramework</span>
-   
-## <span style="color:green;font-size: 18pt">Introduction</span>
+# EPOS Routing Framework
 
-### <span style="color:forestgreen;font-size: 16pt">Overview</span>
 This framework enables EPOS components, written in Java, to connect to the ICS-C message bus and allow components to communicate with each other. The framework's main aim is to reduce the amount of code a component needs to write for message communication to a minimum.
 
 It supports a specific architectural style of communication which may be best described as _Chained Remote Procedure Calling_. The Remote Procedure Call (RPC) part refers to the fact that a request will originate from some component (e.g. the WebAPI component as a result of a HTTP request) and then be passed to another for processing. The initiating component then waits for a response to come back. (At present the process initiating the request will be blocked until the response is received.)
