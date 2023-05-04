@@ -1,0 +1,25 @@
+name: release and push to central
+on:
+  push:
+    branches:
+      - '*'
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v2
+      - name: Echo secrets
+        run: |
+          mkdir -p ~/.gnupg/
+          printf "$GPG_PRIVATE_KEY" | base64 --decode > ~/.gnupg/private.key
+          gpg --batch --import ~/.gnupg/private.key
+          gpg --list-secret-keys 
+        shell: bash
+        env:
+          GPG_PRIVATE_KEY : ${{ secrets.GPG_PRIVATE_KEY }}
+      - name: Update version in pom.xml
+        run: mvn -B versions:set -DnewVersion=${{ github.ref }} -DgenerateBackupPoms=false
+      - name: Test artifact
+        run: |
+          mvn clean test
