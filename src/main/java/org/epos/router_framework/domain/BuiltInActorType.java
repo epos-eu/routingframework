@@ -33,6 +33,7 @@ public enum BuiltInActorType {
 	TCS_CONNECTOR("access"),
 	DB_CONNECTOR("fetch"),
 	INGESTOR("ingest"),
+	EMAIL_SENDER("sender"),
 	WEB_API("web-api");
 
 	private static final Map<String, BuiltInActorType> ACTORS = Arrays.stream(BuiltInActorType.values())

@@ -24,5 +24,6 @@ public enum Servicetypes {
     INGESTION,
     PROCESSING,
     VALIDATOR,
+    SENDER,
     TOPIC
 }

@@ -33,7 +33,9 @@ public enum ServiceType {
 	EXTERNAL("externalAccess"),
 	INGESTOR("ingestorService"),
 	PROCESS("processService"),
-	SCHEDULER("schedulerService");
+	SCHEDULER("schedulerService"),
+	CONVERTER("converterService"),
+	SENDER("senderService");
 	
 	private String serviceLabel;
 	
