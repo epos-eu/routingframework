@@ -34,6 +34,7 @@ public enum BuiltInActorType {
 	DB_CONNECTOR("fetch"),
 	INGESTOR("ingest"),
 	EMAIL_SENDER("sender"),
+	PROCESSING("processing"),
 	WEB_API("web-api");
 
 	private static final Map<String, BuiltInActorType> ACTORS = Arrays.stream(BuiltInActorType.values())
